@@ -1,5 +1,7 @@
 # vue-github-search
 
+Demo: https://elnasim.github.io/works/vue-github-search
+
 ## Project setup
 ```
 npm install
