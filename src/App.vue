@@ -43,6 +43,11 @@
     },
     methods: {
       getData: debounce(function (userName) {
+        if (userName === '') {
+          this.isInputClear = true;
+          this.isUserGetted = false;
+          return
+        }
         axios.get(`https://api.github.com/users/${userName}`)
             .then(
                 (data) => {
@@ -55,7 +60,6 @@
                   this.isUserGetted = true;
                   this.isInputClear = false;
                   this.isUserNotFound = false;
-                  console.log('-->', data.data)
                 },
                 () => {
                   this.isUserNotFound = true;
@@ -78,17 +82,27 @@
   }
 
   #app {
-    padding: 100px;
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
   }
 
   .container {
+    width: 100%;
     max-width: 1200px;
     margin: auto;
+    padding: 0 15px;
   }
 
   .text-error {
     text-align: center;
     margin-top: 20px;
     font-size: 24px;
+  }
+
+  @media (max-height: 650px) {
+    #app {
+      padding: 50px 0;
+    }
   }
 </style>

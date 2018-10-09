@@ -30,7 +30,6 @@
 
 <style scoped lang="scss">
   .github-person {
-    margin-top: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -49,11 +48,11 @@
     background-position: center;
     background-size: cover;
     background-color: #b0b0b0;
+    margin-bottom: 15px;
   }
 
   .person-name {
     font-size: 24px;
-    margin-top: 8px;
   }
 
   .person-repo {
@@ -72,5 +71,19 @@
     width: 33.333%;
     color: #ffffff;
     text-decoration: none;
+  }
+
+  @media (max-width: 767px) {
+    .person-repo{
+      flex-direction: column;
+      align-items: center;
+    }
+    .person-repo-info{
+      margin-bottom: 40px;
+      width: 100%;
+      &:last-child{
+        margin-bottom: 0;
+      }
+    }
   }
 </style>

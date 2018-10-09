@@ -1,6 +1,8 @@
 <template>
   <form class="input-wrapper" @submit.prevent="getData(inputData)">
-    <input class="input" type="text" placeholder="Введите имя пользователя..." v-model="inputData" @input="getData(inputData)">
+    <input class="input" type="text" placeholder="Введите имя пользователя..."
+           v-model="inputData"
+           @input="getData(inputData)">
     <!--<button class="input-btn">Искать</button>-->
   </form>
 </template>
@@ -27,6 +29,13 @@
 
   .input-wrapper {
     display: flex;
+    margin-bottom: 50px;
+  }
+
+  @media (max-width: 479px) {
+    .input {
+      font-size: 16px;
+    }
   }
 
   .input-btn {
